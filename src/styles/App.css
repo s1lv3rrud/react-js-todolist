@@ -1,19 +1,23 @@
 .app {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
 form {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 input[type="text"] {
   padding: 10px;
   font-size: 16px;
-  width: 80%;
   margin-right: 10px;
+  border-radius: 10px;
+  border: none;
+  width:70vw;
 }
 
 button {
@@ -22,7 +26,6 @@ button {
 }
 
 ul {
-  list-style: none;
   padding: 0;
 }
 
@@ -31,22 +34,23 @@ li {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #aaa;
+  width: 80vw;
 }
 
 li span {
-  flex-grow: 1;
   text-align: left;
   padding: 0 10px;
+  flex-grow: 1; /* flex 내부에서 차지하는 비율 */
 }
 
 li button {
   background: none;
   border: none;
   color: red;
-  cursor: pointer;
 }
 
 li button:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
