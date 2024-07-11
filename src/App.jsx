@@ -10,6 +10,11 @@ const App = () => {
     setTodos([...todos, newTodo]);
   };
 
+  const deleteTodo = (index) => {
+    const newTodos = todos.filter((_, i) => i !== index);
+    setTodos(newTodos);
+  };
+
   // setTodos가 비동기적으로 작동하므로 useEffect를 활용하여 todos 변경 확인
   useEffect(() => {
     console.log(todos);
@@ -19,7 +24,7 @@ const App = () => {
     <div className="app">
       <h1>Todo List</h1>
       <TodoInput addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} deleteTodo={deleteTodo}/>
     </div>
   );
 };
