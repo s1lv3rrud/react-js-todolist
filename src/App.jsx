@@ -10,6 +10,13 @@ const App = () => {
     setTodos([...todos, newTodo]);
   };
 
+  const toggleTodo = (index) => {
+    const newTodos = todos.map((todo, i) =>
+      i === index ? { ...todo, completed: !todo.completed } : todo
+    );
+    setTodos(newTodos);
+  };
+
   const deleteTodo = (index) => {
     const newTodos = todos.filter((_, i) => i !== index);
     setTodos(newTodos);
@@ -24,7 +31,7 @@ const App = () => {
     <div className="app">
       <h1>Todo List</h1>
       <TodoInput addTodo={addTodo} />
-      <TodoList todos={todos} deleteTodo={deleteTodo}/>
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );
 };
