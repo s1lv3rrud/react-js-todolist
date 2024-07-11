@@ -6,6 +6,7 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
     <ul>
       {todos.map((todo, index) => (
         <TodoItem
+          key={index}
           todo={todo}
           toggleTodo={() => toggleTodo(index)}
           deleteTodo={() => deleteTodo(index)}
