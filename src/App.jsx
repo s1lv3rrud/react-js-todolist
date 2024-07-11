@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -18,6 +19,7 @@ const App = () => {
     <div className="app">
       <h1>Todo List</h1>
       <TodoInput addTodo={addTodo} />
+      <TodoList todos={todos} />
     </div>
   );
 };
